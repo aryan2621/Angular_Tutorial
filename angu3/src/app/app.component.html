@@ -1,0 +1,54 @@
+<!-- <h1>Lazy Loading</h1>
+<h3>ADMIN PAGE</h3>
+<ul>
+  <li>
+    <a routerLink="admin/login">LOGIN</a>
+  </li>
+  <li>
+    <a routerLink="admin/list">LIST</a>
+  </li>
+</ul>
+
+<h3>USER PAGE</h3>
+<ul>
+  <li>
+    <a routerLink="user/login">LOGIN</a>
+  </li>
+  <li>
+    <a routerLink="user/list">LIST</a>
+  </li>
+</ul>
+<router-outlet></router-outlet> -->
+
+
+<!-- <div class="container">
+  <h1>ANGULAR FORMS</h1>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+    <label class="form-label">Email address</label>
+    <input class="form-control" type="text" ngModel name="email" />
+    <br><br>
+    <label class="form-label">Password</label>
+    <input class="form-control" type="password" ngModel name="password" />
+    <br><br>
+    <button class="btn btn-success" type="submit">LOGIN</button>
+  </form>
+</div> -->
+
+
+<div class="container">
+  <h1>ANGULAR REACTIVE FORMS</h1>
+  <form [formGroup]="loginForm">
+    <div >
+
+    </div>
+    <label class="form-label">Email address</label>
+    <input formControlName="email" class="form-control" type="text" ngModel name="email" />
+    <span *ngIf="email?.invalid">Email is invalid</span>
+    <br><br>
+    <label class="form-label">Password</label>
+    <input formControlName="password" class="form-control" type="password" ngModel name="password" />
+    <br><br>
+    <span *ngIf="password?  .invalid">Password is invalid</span>
+    <button class="btn btn-success" type="submit">LOGIN</button>
+  </form>
+</div>

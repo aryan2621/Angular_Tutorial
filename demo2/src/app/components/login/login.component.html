@@ -1,0 +1,16 @@
+<h3>LOGIN</h3>
+<form action="" [formGroup]="LoginForm">
+  
+    <div class="form-group">
+        <input class="form-control" type="email" [formControl]="email" />
+        <span class="text-danger" [hidden]="email.valid">Enter the correct Mail</span>
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="password" [formControl]="password" />
+        <span class="text-danger" [hidden]="password.valid">Enter the correct Mail</span>
+    </div>
+    <button [disabled]="LoginForm.invalid" class="btn btn-success" (click)="Submit()">Submit</button>
+</form>
+
+<h3>{{email.value}}</h3>

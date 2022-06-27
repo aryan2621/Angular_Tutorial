@@ -1,0 +1,8 @@
+<h1>Component -B Counter {{showCounter()}}</h1>
+<button class="btn btn-primary" (click)="updateCounter()">Update</button>
+<!-- <app-comp-c></app-comp-c> -->
+
+<div *ngFor="let user of users" (click)="Func(user.id)">
+    <span>{{user.name}}</span>
+</div>
+<app-comp-c></app-comp-c>

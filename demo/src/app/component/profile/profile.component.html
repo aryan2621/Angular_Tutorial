@@ -1,0 +1,25 @@
+<!-- <h3>This is the Profile Page</h3>
+<h4>{{name | uppercase}}</h4>
+<h3>{{age}}</h3>
+<h3>{{ salary | currency:'INR'}}</h3>
+<h3>{{status}}</h3>
+<p>{{getName()}}</p>
+<button [class]="btnColor" [disabled]="isDisable">Click Me</button>
+
+<button class="btn black" (click)="ConvertToINR()">Click ME</button>
+<input type="text" class="form-control" [value]="inputValue" (input)="getInputValue($event)" />
+<h2>{{inputValue}}</h2>
+<input type="text" [(ngModel)]="inputValue">
+
+
+<h3 *ngIf="salary<40 else lowS">Party to banti hai</h3>
+<ng-template #lowS>
+    <h3>Salary is two low</h3>
+</ng-template>
+{{myDate}}
+
+<ul *ngFor="let fruit of fruits;index as k;">
+    <li>{{k}}-{{fruit | uppercase}}</li>
+</ul>
+<input type="date" [(ngModel)]="myDate" />
+[ngClass] allow the class only when the conditions in the passed braces are true -->

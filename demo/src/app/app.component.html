@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Hello world</h2>
+  <div *ngFor="let user of users">
+    <app-users *ngIf="show" [name]="user.name" [age]="user.age" [salery]="user.salery" [status]="user.status"
+      [imgs]="user.imgs" (myEvent)="receivedData($event)">
+      <h2>{{ title }}</h2>
+      <input type="text" [(ngModel)]="title" />
+    </app-users>
+  </div>
+</div>    
+<h3>{{phone_no | pipes}}</h3>
+<button (click)="show=!show">ClickMEYES</button>
+
+<!-- <app-users></app-users> -->
+<app-profile></app-profile>
+<app-joke></app-joke>
