@@ -1,0 +1,16 @@
+table {
+  width: 51vw;
+  align-items: center;
+  justify-content: center;
+  margin-right: 40px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkout {
+  width: 80%;
+}

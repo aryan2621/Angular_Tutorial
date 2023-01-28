@@ -1,0 +1,49 @@
+<app-search></app-search>
+<app-tag></app-tag>
+<ul>
+  <li *ngFor="let food of FoodData">
+    <div class="cont" (click)="movetoDetailPage(food.id)">
+      <img class="img-thumbnail" [src]="food.img" alt="" />
+      <div class="text-block">
+        <h4>
+          {{ food.name }}
+        </h4>
+      </div>
+    </div>
+    <div class="content">
+      <span class="price">{{ food.price | currency : "INR" }}💰</span>
+      <span>{{ food.cookTime }} mins ⌛</span>
+      <h5 *ngIf="food.star <= 2" class="badge rounded-pill text-bg-info">
+        {{ food.star }} ⭐
+      </h5>
+      <h5 *ngIf="food.star > 2 && food.star <= 4" class="badge rounded-pill text-bg-warning">
+        {{ food.star }} ⭐
+      </h5>
+      <h5 *ngIf="food.star > 4" class="badge rounded-pill text-bg-success">
+        {{ food.star }} ⭐
+      </h5>
+    </div>
+  </li>
+</ul>
+<div *ngIf="FoodData.length == 0">
+  <section class="page_404">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 ">
+          <div class="col-sm-10 col-sm-offset-1  text-center">
+            <div class="four_zero_four_bg">
+              <h1 class="text-center ">404</h1>
+            </div>
+            <div class="contant_box_404">
+              <h3 class="h2">
+                Look like you're lost
+              </h3>
+              <p>the page you are looking for not avaible!</p>
+              <a href="/" class="btn btn-success">Go to Home</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

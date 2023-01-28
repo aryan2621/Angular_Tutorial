@@ -1,0 +1,40 @@
+<div class="container my-5">
+  <div class="table">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Index</th>
+          <th scope="col">Food Item</th>
+          <th scope="col">Food Name</th>
+          <th scope="col">QTY</th>
+          <th scope="col">Total Price</th>
+          <th scope="col">Remove</th>
+          <th scope="col">Update QTY</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cart.items">
+          <td>#</td>
+          <td>
+            <img width="100" height="100" [src]="item.food.img" alt="" />
+          </td>
+          <td>{{ item.food.name }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.getPrice() | currency : "INR" }}</td>
+          <td>
+            <a class="btn btn-danger" (click)="removeFromCart(item)"> X </a>
+          </td>
+          <td>
+            <div class="btn-group mr-2">
+              <a (click)="increaseQuantity(item)" class="btn btn-secondary">+</a>
+              <a [hidden]="item.quantity === 1" (click)="decreaseQuantity(item)" class="btn btn-secondary">-</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="checkout">
+    <app-checkout [cartItem]="cart.items"></app-checkout>
+  </div>
+</div>

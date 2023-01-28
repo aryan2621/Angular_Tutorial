@@ -1,0 +1,30 @@
+<div class="food-detail">
+  <img [src]="food.img" class="img-thumbnail float-left" />
+  <div class="details">
+    <h4 class="head">{{ food.name }} 🍔</h4>
+    <p>{{ food.price | currency : "INR" }} 💸</p>
+    <p>{{ food.cookTime }} minutes 🕒</p>
+    <h5 *ngIf="food.star <= 2" class="badge rounded-pill text-bg-info">
+      {{ food.star }} ⭐
+    </h5>
+    <h5
+      *ngIf="food.star > 2 && food.star <= 4"
+      class="badge rounded-pill text-bg-warning"
+    >
+      {{ food.star }} ⭐
+    </h5>
+    <h5 *ngIf="food.star > 4" class="badge rounded-pill text-bg-success">
+      {{ food.star }} ⭐
+    </h5>
+    <div class="tags">
+      <span (click)="moveToTag(tag)" *ngFor="let tag of food.tags; let i = index" [ngClass]="classList[i]">
+        {{ tag | uppercase}}
+      </span>
+    </div>
+    <div class="cart mt-3">
+      <button class="w-100 btn btn-outline-warning" (click)="addToCarts()">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>

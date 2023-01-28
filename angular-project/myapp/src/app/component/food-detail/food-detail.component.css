@@ -1,0 +1,28 @@
+.food-detail {
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+}
+
+img {
+  margin: auto;
+  width: 40vw;
+  height: 450px;
+}
+.tags {
+  display: flex;
+  justify-content: space-between;
+}
+.tags button{
+  font-size: 0.8rem;
+}
+
+
+img:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.food-detail .details {
+  margin-top: 15px;
+  width: 35vw;
+}
